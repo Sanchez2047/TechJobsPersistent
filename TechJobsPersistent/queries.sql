@@ -1,5 +1,6 @@
 --Part 1
 
+
 --jobs
 	--	Id INT PRIMARY KEY AUTO_INCREMENT
 	--	Name LONGTEXT
@@ -24,5 +25,13 @@
 
 --Part 2
 
+
+--SELECT Name 
+--FROM employers
+--WHERE Location = "St. Louis City";
+
+
 --Part 3
+
+
 

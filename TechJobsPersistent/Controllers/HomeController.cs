@@ -33,6 +33,7 @@ namespace TechJobsPersistent.Controllers
         public IActionResult AddJob()
         {
             List<Employer> employers= _context.Employers.ToList();
+
             AddJobViewModel addJobViewModel = new AddJobViewModel(employers);
             return View(addJobViewModel);
         }
@@ -41,7 +42,7 @@ namespace TechJobsPersistent.Controllers
         {
             if (ModelState.IsValid)
             {
-                Employer employer = _context.Employers.Find(addJobViewModel.EmployerId);
+                Employer employer = _context.Employers.Find(addJobViewModel.EmployerId);    
                 Job job = new Job
                 {
                     Name = addJobViewModel.Name,
@@ -51,7 +52,20 @@ namespace TechJobsPersistent.Controllers
                 _context.SaveChanges();
                 return Redirect("Index");
             }
-            return View(addJobViewModel);
+            addJobViewModel.Employers = new List<SelectListItem>();
+            List<Employer> employers = _context.Employers.ToList(); 
+            foreach (var employer in employers)
+            {
+                addJobViewModel.Employers.Add
+                (
+                    new SelectListItem
+                    {
+                        Value = employer.Id.ToString(),
+                        Text = employer.Name
+                    }
+                );
+            }
+            return View("Addjob", addJobViewModel);
         }
 
         public IActionResult Detail(int id)

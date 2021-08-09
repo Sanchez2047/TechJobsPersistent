@@ -18,7 +18,7 @@ namespace TechJobsPersistent.ViewModels
         public AddJobViewModel(List<Employer> employers)
         {
             Employers = new List<SelectListItem>();
-            foreach(Employer employer in employers)
+            foreach(var employer in employers)
             {
                 Employers.Add
                 (
@@ -27,7 +27,7 @@ namespace TechJobsPersistent.ViewModels
                         Value = employer.Id.ToString(),
                         Text = employer.Name
                     }
-                );
+                ); ;
             }
         }
         public  AddJobViewModel()

@@ -1,8 +1,18 @@
 ﻿@model Employer
 
-<h1>Employer: @Model.Name</h1>
 
 <div>
-    <p>Name: @Model.Name</p>
-    <p>Location: @Model.Location</p>
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th><h1>Employer: @Model.Name</h1></th>
+            </tr>
+        </thead>
+        <tr>
+            <td>Name: @Model.Name</td>
+        </tr>
+        <tr>
+            <td>Location: @Model.Location</td>
+        </tr>
+    </table>
 </div>

@@ -22,7 +22,7 @@ namespace TechJobsPersistent.Controllers
         public IActionResult Index()
         {
             List<Employer> employers = new List<Employer>(_context.Employers.ToList());
-            return View();
+            return View(employers);
         }
 
         public IActionResult Add()
@@ -50,7 +50,7 @@ namespace TechJobsPersistent.Controllers
         public IActionResult About(int id)
         {
             Employer employer = _context.Employers.Find(id);
-            return View();
+            return View(employer);
         }
     }
 }

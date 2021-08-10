@@ -8,7 +8,7 @@ namespace TechJobsPersistent.ViewModels
 {
     public class AddJobSkillViewModel
     {
-        [Required(ErrorMessage = "Job is required")]
+        [Required(ErrorMessage = "Job is required!")]
         public int JobId { get; set; }
 
         [Required(ErrorMessage = "Skill is required")]
@@ -20,18 +20,18 @@ namespace TechJobsPersistent.ViewModels
 
         public AddJobSkillViewModel(Job theJob, List<Skill> possibleSkills)
         {
-            Skills = new List<SelectListItem>();
+            this.Skills = new List<SelectListItem>();
 
             foreach (var skill in possibleSkills)
             {
-                Skills.Add(new SelectListItem
+                this.Skills.Add(new SelectListItem
                 {
                     Value = skill.Id.ToString(),
                     Text = skill.Name
                 });
             }
 
-            Job = theJob;
+            this.Job = theJob;
         }
 
         public AddJobSkillViewModel()

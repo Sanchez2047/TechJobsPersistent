@@ -75,6 +75,7 @@ namespace TechJobsPersistent.Controllers
                     }
                 );
             }
+            addJobViewModel.Skills = _context.Skills.ToList();
             return View("Addjob", addJobViewModel);
         }
 

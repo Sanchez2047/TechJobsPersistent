@@ -29,7 +29,7 @@ namespace TechJobsPersistent.ViewModels
                         Value = employer.Id.ToString(),
                         Text = employer.Name
                     }
-                ); ;
+                );
             }
         }
         public  AddJobViewModel()
